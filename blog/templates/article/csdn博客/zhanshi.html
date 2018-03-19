@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>csdn博客</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/article/csdn_css.css">
+	<link rel="stylesheet" type="text/css" href="/static/article/zhanshi.css">
+	<script type="text/javascript">
+		window.onload=function(){
+
+			var bo = document.getElementById("bo");
+			var xiang = document.getElementById("xiang");
+			var message = document.getElementById("message");
+
+			bo.onclick = function(){
+	              window.location="/article/blogArticles.html";
+
+			}
+
+			xiang.onclick = function(){
+	               window.location="BigXiangCe.html";
+
+			}
+
+			message.onclick= function(){
+	                    window.location="/user/gerenyemian.html";
+
+			}
+
+			var text = document.getElementById("srarch_text");
+			text.onfocus=function(){
+               text.value="";
+			}
+
+            text.onblur=function(){
+            	text.value="文章搜索";
+            }
+
+		};
+	</script>
+</head>
+<body>
+<div id="head" >
+	<header>
+		  <h1>Missing</h1>
+		  <p>有一种思念，是淡淡的幸福；有一种幸福，是常常的牵挂；有一种牵挂，是远远地欣赏.......</p>
+			<nav id="nav">
+			     <ul>
+			       <li class="other">网站首页</li>
+			       <li class="other" id="bo">博文</li>
+			       <li class="other" id="xiang">相册</li>
+			       <li class="other" id="message">个人信息</li>
+			     </ul>
+			</nav>
+	</header>
+</div>
+<div style="clear:both"></div>
+<div  id="center">
+  	 <p id="title">11111111111111</p>
+  	 <div id="article">
+  	 	
+  	 </div>
+</div>
+
+</body>
+</html>

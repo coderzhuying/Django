@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/article/csdn_css.css">
+	<link rel="stylesheet" type="text/css" href="/static/users/genrenyemian.css">
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		header{
+			width:75%;
+		}
+		#nav{
+			width:78%;
+		}
+		a:link{
+			text-decoration: none;
+			color:black;
+		}
+
+	</style>
+</head>
+<body>
+<header>
+	  <h1>个人页面</h1>
+	  <p>有一种思念，是淡淡的幸福；有一种幸福，是常常的牵挂；有一种牵挂，是远远地欣赏.......</p>
+</header>
+<nav id="nav">
+     <ul>
+       <li class="other"><a href="/" target="_blank">网站首页</a></li>
+       <li class="other"><a href="/article/blogArticles.html" target="_blank">博文</a></li>
+       <li class="other"><a href="/user/xiangCe.html" target="_blank">相册</a></li>
+       <li class="other"><a href="/user/gerenyemian.html" target="_blank">个人信息</a></li>
+     </ul>
+</nav>
+<div style="clear: both"></div>
+<div class="main">
+
+	<a href="/user/uploadPic.html" alt="" class="head" >
+		<p style="text-align: center;line-height: 150px;">点击上传头像</p>
+	</a>
+	<div>
+		<form action="/user/infoHandle" method="post">
+            <label>用户名 :</label>
+           <input type="text" name="user_name" id="user_name" value={{uname}} readonly />
+        <br><br>
+            <label>性别 :</label>
+			{%ifequal sex True%}
+            	<input type="text" name="sex" id="sex" value="男">
+			{%else%}
+				<input type="text" name="sex" id="sex" value="女">
+			{%endifequal%}
+       <br><br>
+			<label>职业 :</label>
+            <input type="text" name="work" id="work" value={{work}}>
+       <br><br><br>
+			<label>出生日期:</label>
+            <input type="text" name="birth" id="birth" value={{birth}}>
+       <br><br>
+			<label>地址:</label>
+            <input type="text" name="ad" id="ad" value={{ad}}>
+       <br><br>
+		<div style="clear: both;"></div>
+		<div class="line" ></div>
+		<p style="margin-top: 10px;">自我描述</p>
+		{%csrf_token%}
+	</div>
+    <input style="padding:20px;box-sizing:border-box;" name="desc" id="desc" value={{desc}} />
+   <input type="submit" value="保 存" />
+   <input type="reset" value="重 置"/>
+	</form>
+</div>
+</body>
+</html>
+<script>
+	document.cookie="name=liy";
+</script>

@@ -1,0 +1,36 @@
+/*最后将其中的高度去掉，把高度改为auto,并且将其中的背景颜色去掉*/
+      #center{
+      	width:70%;
+      	/*height:auto;*/
+      	height:700px;
+      	background-color: white;
+      	margin:0 auto;
+      	margin-top:30px;
+      	margin-bottom:50px;
+      	padding:30px;
+      }
+
+      #title{
+          text-align: center;
+          font-size: 25px;
+          font-family: "楷体";
+      }
+		header{
+			color: white;
+			width:75%;
+		}
+		header p{
+			color: white;
+		}
+		#nav{
+			float:left;
+		}
+
+		#article{
+			width:85%;
+			/*height:auto;*/
+			height:85%;
+			margin:0 auto;
+			background-color: red;
+			margin-top:30px;
+		}

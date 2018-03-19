@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>相册</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/article/csdn_css.css">
+	<link rel="stylesheet" type="text/css" href="/static/users/xiangCe.css">
+	<style type="text/css">
+      .box{
+      	height:85%;
+      }
+	</style>
+	<script type="text/javascript">
+		
+		window.onload = function(){
+			var delet = document.querySelectorAll(".delete");
+			var xiangce = document.getElementById('xiangce');
+			var big_box = document.querySelectorAll(".big-box");
+
+			for (var i = delet.length - 1; i >= 0; i--) {
+			 	delet[i].index = i;
+			 	delet[i].onclick = function(){
+			 		xiangce.removeChild(big_box[this.index]);
+			 	}
+			 } 
+		}
+	</script>
+</head>
+<body>
+<header>
+	  <h1>Missing</h1>
+	  <p>有一种思念，是淡淡的幸福；有一种幸福，是常常的牵挂；有一种牵挂，是远远地欣赏.......</p>
+</header>
+<div style="clear: both;"></div>
+<div id="xiangce">
+	<div class="big-box">
+		<img src="/static/users/01.jpg" class="box">
+		<span class="delete">删除</span>
+	</div>
+	<div class="big-box">
+		<img src="/static/users/02.jpg" class="box">
+		<span class="delete">删除</span>
+	</div>
+	<div class="big-box">
+		<img src="/static/users/03.jpg" class="box">
+		<span class="delete">删除</span>
+	</div>
+	<div class="big-box">
+		<img src="/static/users/01.jpg" class="box">
+		<span class="delete">删除</span>
+	</div>
+	<div class="big-box">
+		<img src="/static/users/02.jpg" class="box">
+		<span class="delete">删除</span>
+	</div>
+	<div class="big-box">
+		<img src="/static/users/03.jpg" class="box">
+		<span class="delete">删除</span>
+	</div>
+	<div class="big-box">
+		<img src="/static/users/01.jpg" class="box">
+		<span class="delete">删除</span>
+	</div>
+	<div class="big-box">
+		<img src="/static/users/02.jpg" class="box">
+		<span class="delete">删除</span>
+	</div>
+	<div class="big-box">
+		<img src="/static/users/03.jpg" class="box">
+		<span class="delete">删除</span>
+	</div>	
+</div>
+</body>
+</html>

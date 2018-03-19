@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>B相册</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/article/csdn_css.css">
+	<link rel="stylesheet" type="text/css" href="/static/users/xiangCe.css">
+	<link rel="stylesheet" type="text/css" href="/static/users/BigXiangCe.css">
+	<script type="text/javascript">
+		
+		window.onload = function(){
+			var delet = document.querySelectorAll(".delete");
+			var xiangce = document.getElementById('xiangce');
+			var small_box = document.querySelectorAll(".small_box");
+			var small_box_del = document.querySelectorAll(".small_box_delete");
+			var big_box=document.querySelectorAll(".big-box");
+
+
+
+
+			//这里实现的是鼠标进入的时候小图标的出现消失的效果
+			for (var i = big_box.length - 1; i >= 0; i--) {
+				big_box[i].index=i;
+				big_box[i].onmousemove=function(){
+					for (var j = delet.length - 1; j >= 0; j--) {
+						delet[j].style.display="none";
+					}
+					delet[this.index].style.display="block";
+
+				}
+
+				big_box[i].onmouseout=function(){
+					for (var j = delet.length - 1; j >= 0; j--) {
+						delet[j].style.display="none";
+					}
+					delet[this.index].style.display="none";
+
+				}
+			}
+			
+
+
+			// //这里实现的是将其中的点击小图标，然后出现的选择框的出现
+			for (var i = delet.length - 1; i >= 0; i--) {
+				delet[i].index=i;
+				delet[i].onclick=function(){
+					for (var i = small_box.length - 1; i >= 0; i--) {
+						small_box[i].style.display="none";
+					}
+					small_box[this.index].style.display="block";
+				}
+			}
+
+
+
+			//其中的利用的是其中的定时器来完成其中的
+
+
+
+
+
+
+
+			//这里实现的是将其中的点击删除之后就会进行其中的删除的操作
+			for (var i = small_box_del.length - 1; i >= 0; i--) {
+				small_box_del[i].index=i;
+				small_box_del[i].onclick=function(){
+					for (var j = big_box.length - 1; j >= 0; j--) {
+						 xiangce.removeChild(big_box[this.index]);
+					}
+				}
+			}
+
+			
+		}
+	</script>
+</head>
+<body>
+<header>
+	  <h1>Missing</h1>
+	  <p>有一种思念，是淡淡的幸福；有一种幸福，是常常的牵挂；有一种牵挂，是远远地欣赏.......</p>
+</header>
+<ul id="an">
+	<li>添加照片</li>
+	<li>批量管理</li>
+	<li>照片分类</li>
+</ul>
+<div id="xiangce">
+	<div class="big-box">
+	    <div class="delete"><img src="/static/article/trangle.png" title="小三角"></div>
+	    <ul class="small_box">
+	    	<li class="edit">编辑</li>
+	    	<li class="small_box_delete">删除</li>
+	    </ul>
+		<img src="/static/users/01.jpg" class="box">
+	</div>
+	<div class="big-box">
+		<div class="delete"><img src="/static/article/trangle.png" title="小三角"></div>
+		<ul class="small_box">
+	    	<li class="edit">编辑</li>
+	    	<li class="small_box_delete">删除</li>
+	    </ul>
+		<img src="/static/users/02.jpg" class="box">
+	</div>
+	<div class="big-box">
+	    <div class="delete"><img src="/static/article/trangle.png" title="小三角"></div>
+	    <ul class="small_box">
+	    	<li class="edit">编辑</li>
+	    	<li class="small_box_delete">删除</li>
+	    </ul>
+		<img src="/static/users/03.jpg" class="box">
+	</div>
+	<div class="big-box">
+		<div class="delete"><img src="/static/article/trangle.png" title="小三角"></div>
+		<ul class="small_box">
+	    	<li class="edit">编辑</li>
+	    	<li class="small_box_delete">删除</li>
+	    </ul>
+		<img src="/static/users/01.jpg" class="box">
+	</div>
+	<div class="big-box">
+		<div class="delete"><img src="/static/article/trangle.png" title="小三角"></div>
+		<ul class="small_box">
+	    	<li class="edit">编辑</li>
+	    	<li class="small_box_delete">删除</li>
+	    </ul>
+		<img src="/static/users/02.jpg" class="box">
+	</div>
+	<div class="big-box">
+		<div class="delete"><img src="/static/article/trangle.png" title="小三角"></div>
+		<ul class="small_box">
+	    	<li class="edit">编辑</li>
+	    	<li class="small_box_delete">删除</li>
+	    </ul>
+		<img src="/static/users/03.jpg" class="box">
+	</div>
+	<div class="big-box">
+		<div class="delete"><img src="/static/article/trangle.png" title="小三角"></div>
+		<ul class="small_box">
+	    	<li class="edit">编辑</li>
+	    	<li class="small_box_delete">删除</li>
+	    </ul>
+		<img src="/static/users/01.jpg" class="box">
+	</div>
+	<div class="big-box">
+		<div class="delete"><img src="/static/article/trangle.png" title="小三角"></div>
+		<ul class="small_box">
+	    	<li class="edit">编辑</li>
+	    	<li class="small_box_delete">删除</li>
+	    </ul>
+		<img src="/static/users/02.jpg" class="box">
+	</div>
+	<div class="big-box">
+		<div class="delete"><img src="/static/article/trangle.png" title="小三角"></div>
+		<ul class="small_box">
+	    	<li class="edit">编辑</li>
+	    	<li class="small_box_delete">删除</li>
+	    </ul>
+		<img src="/static/users/03.jpg" class="box">
+	</div>	
+</div>
+
+
+<div id="bottom">
+	<div id="bottom_box">
+		<span><a href="">----------------------------------------------------------------------------------------------------联系我们</a></span>|
+	</div>
+</div>
+
+
+
+
+<!-- 这里设置的是弹窗 -->
+</body>
+</html>
