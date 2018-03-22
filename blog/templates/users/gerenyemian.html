@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 	<title></title>
 	<meta charset="utf-8">
@@ -22,6 +22,47 @@
 		}
 
 	</style>
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+	$(document).ready(function(){
+      //这里是对于其中的表单的序列化
+      $("form input[type=button]").click(function(){
+        $.ajax({
+          type:'POST',
+          url:'',
+          data:{
+              name: $('form input[name=user_name]').val(),
+              sex:$('form input[name=sex]').val(),
+              work:$('form input[name=work]').val(),
+              birth:$('form input[name=birth]').val(),
+              ad:$('form input[name=ad]').val(),
+              desc:$("#desc").val()
+
+          },
+          success:function(response,status,xhr){
+              let data = JSON.parse(response);
+              //这里其中的response就是其中的返回的东西
+               var form = document.getElementById('form');
+               var desc = document.getElementById("desc");
+               var input = form.input;
+                var name = input[0];
+                var sex = input[1];
+                var work =input[2];
+                var birth =input[3];
+                var ad = input[4];
+
+
+          name.html(data.name);
+          sex.html(data.sex);
+          work.html(data.work);
+          birth.html(data.birth);
+          ad.html(data.ad);
+          desc.html(data.desc);
+          }
+        })
+      })
+    });
+</script>
 </head>
 <body>
 <header>
@@ -43,38 +84,36 @@
 		<p style="text-align: center;line-height: 150px;">点击上传头像</p>
 	</a>
 	<div>
-		<form action="/user/infoHandle" method="post">
+		<form action="/user/infoHandle" method="post" id="form">
             <label>用户名 :</label>
-           <input type="text" name="user_name" id="user_name" value={{uname}} readonly />
+           <input type="text" name="user_name" id="user_name" value={{uname}} readonly/>
         <br><br>
             <label>性别 :</label>
-			{%ifequal sex True%}
-            	<input type="text" name="sex" id="sex" value="男">
-			{%else%}
-				<input type="text" name="sex" id="sex" value="女">
-			{%endifequal%}
+            <input type="text" name="sex" id="sex" value={{sex}}>
        <br><br>
 			<label>职业 :</label>
-            <input type="text" name="work" id="work" value={{work}}>
+            <input type="text" name="work" id="work" value={{work}} >
        <br><br><br>
 			<label>出生日期:</label>
-            <input type="text" name="birth" id="birth" value={{birth}}>
+            <input type="text" name="birth" id="birth" value={{birth}} >
        <br><br>
 			<label>地址:</label>
-            <input type="text" name="ad" id="ad" value={{ad}}>
+            <input type="text" name="ad" id="ad" value={{ad}} >
        <br><br>
 		<div style="clear: both;"></div>
 		<div class="line" ></div>
 		<p style="margin-top: 10px;">自我描述</p>
 		{%csrf_token%}
 	</div>
-    <input style="padding:20px;box-sizing:border-box;" name="desc" id="desc" value={{desc}} />
+    <textarea style="padding:20px;box-sizing:border-box;" name="desc"  id="desc">{{desc}}</textarea>
+    <br/><br/>
    <input type="submit" value="保 存" />
    <input type="reset" value="重 置"/>
 	</form>
 </div>
 </body>
 </html>
-<script>
-	document.cookie="name=liy";
-</script>
+
+
+
+

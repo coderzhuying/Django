@@ -4,6 +4,7 @@ from django.http import HttpResponse,JsonResponse
 import os
 from django.conf import settings
 from django.contrib import messages
+import json
 # Create your views here.
 
 def gerenyemian(request):
@@ -123,24 +124,19 @@ def signinHandle(request):
 
 def infoHandle(request):
 
-    post = request.POST
-
-    uname = post.get('user_name')
-
+    uname = request.POST['user_name']
+    user = User()
     list = User.objects.filter(name=uname)
-
-    list[0].sex = post.get('sex')
-    list[0].work = post.get('work')
-    list[0].birth = post.get('birth')
-    list[0].address = post.get('ad')
-    list[0].desc = post.get('desc')
-    list[0].save()
-
-    request.session['uname'] = uname
-    request.session['sex'] = list[0].sex
-    request.session['work'] = list[0].work
-    request.session['birth'] = list[0].birth
-    request.session['ad'] = list[0].address
-    request.session['desc'] = list[0].desc
-
-    return redirect('/user/gerenyemian.html')
+    user = list[0]
+    response_data = {}
+    response_data['uname'] = user.name = uname
+    response_data['sex'] = user.sex = request.POST['sex']
+    response_data['work'] = user.work = request.POST['work']
+    response_data['birth'] = user.birth = request.POST['birth']
+    response_data['ad'] = user.address = request.POST['ad']
+    response_data['desc'] = user.desc = request.POST['desc']
+    user.save()
+    # return HttpResponse(json.dumps(response_data), content_type="application/json")
+    # return JsonResponse(response_data)
+    return render(request, 'users/gerenyemian.html', response_data)
+    # return HttpResponse(user.desc)
