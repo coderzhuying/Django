@@ -24,9 +24,9 @@ SECRET_KEY = '+rzj&r^xmd$h-$sxd@@_mrg0$xfje5rv&7#u&3$8jk!*ntf!un'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    'blog',
+    'account'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -110,3 +111,5 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/media/')
 
 MEDIA_URL = '/static/media/'
+
+LOGIN_REDIRECT_URL = '/blog/'

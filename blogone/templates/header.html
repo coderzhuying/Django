@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<div>
+    <a href="http://www.baidu.com"><img src="{% static 'images/biao.jpeg' %}" width="100px"></a>
+</div>
+<div>
+    <ul>
+        <li>
+            <a href="{% url 'blog:blog_title' %}">
+            </a>
+        </li>
+    </ul>
+    <ul>
+       {% if user.is_authenticated %}
+           <li><a href="#">{{ user.username }}</a></li>
+           <li><a href="{% url 'account:user_logout' %}">Logout</a></li>
+       {% else %}
+           <li><a href="{% url 'account:user_login' %}">Login</a></li>
+       {% endif %}
+    </ul>
+</div>

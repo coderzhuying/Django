@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div>
+    <h1>
+        Login
+        <p>
+            Input your username and password
+        </p>
+        <form action="." method="post">{% csrf_token %}
+{#            {{ form.as_p }}#}
+            <div>
+                <label for="{{ form.username.id_for_label }}">
+                    Username
+                </label>
+                <div>
+                    {{ form.username }}
+                </div>
+            </div>
+            <div>
+                <label for="{{ form.password.id_for_label }}">
+                    Password
+                </label>
+                <div>
+                    {{ form.password }}
+                </div>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+    </h1>
+</div>
+{% endblock %}

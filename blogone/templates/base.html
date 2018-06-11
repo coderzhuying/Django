@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -5,9 +6,12 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    {% include 'header.html' %}
     <div>
         {% block content %}
         {% endblock %}
     </div>
+    {% include 'footer.html' %}
+    {% block javascript %}{% endblock %}
 </body>
 </html>
