@@ -113,3 +113,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'static/media/')
 MEDIA_URL = '/static/media/'
 
 LOGIN_REDIRECT_URL = '/blog/'
+
+EMAIL_HOST = 'smtp.qq.com'
+
+EMAIL_HOST_USER = '3113714717@qq.com'
+
+EMAIL_HOST_PASSWORD = 'ivefevjukfaddehc'
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = '3113714717@qq.com'
